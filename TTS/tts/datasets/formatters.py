@@ -586,7 +586,6 @@ def kokoro(root_path, meta_file, **kwargs):  # pylint: disable=unused-argument
             wav_file = os.path.join(root_path, "wavs", cols[0] + ".wav")
             text = cols[2].replace(" ", "")
             items.append({"text": text, "audio_file": wav_file, "speaker_name": speaker_name, "root_path": root_path})
-    breakpoint()
     return items
 
 def japa_only_text(root_path, meta_file, **kwargs):
