@@ -76,6 +76,14 @@ def replace_symbols(text, lang="en"):
     return text
 
 
+def japanese_cleaners(text):
+    #text = f'[JA]{text}[JA]'
+    #breakpoint()
+    #text=japanese_to_romaji_with_accent(text).replace('ts', 'ʦ').replace('u', 'ɯ').replace('...', '…')
+    text = re.sub(r'\s+$', '', text)
+    text = re.sub(r'([^\.,!\?\-…~])$', r'\1.', text)
+    return text
+
 def basic_cleaners(text):
     """Basic pipeline that lowercases and collapses whitespace without transliteration."""
     text = lowercase(text)

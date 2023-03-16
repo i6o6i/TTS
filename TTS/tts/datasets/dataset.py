@@ -632,6 +632,7 @@ class PhonemeDataset(Dataset):
         print("[*] Pre-computing phonemes...")
         with tqdm.tqdm(total=len(self)) as pbar:
             batch_size = num_workers if num_workers > 0 else 1
+            breakpoint()
             dataloder = torch.utils.data.DataLoader(
                 batch_size=batch_size, dataset=self, shuffle=False, num_workers=num_workers, collate_fn=self.collate_fn
             )

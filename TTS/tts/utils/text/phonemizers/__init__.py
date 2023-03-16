@@ -2,6 +2,7 @@ from TTS.tts.utils.text.phonemizers.base import BasePhonemizer
 from TTS.tts.utils.text.phonemizers.espeak_wrapper import ESpeak
 from TTS.tts.utils.text.phonemizers.gruut_wrapper import Gruut
 from TTS.tts.utils.text.phonemizers.ja_jp_phonemizer import JA_JP_Phonemizer
+from TTS.tts.utils.text.phonemizers.ja_jp_pyopenjtalk_phonemizer import JA_JP_Pyopenjtalk_Phonemizer
 from TTS.tts.utils.text.phonemizers.ko_kr_phonemizer import KO_KR_Phonemizer
 from TTS.tts.utils.text.phonemizers.zh_cn_phonemizer import ZH_CN_Phonemizer
 
@@ -48,6 +49,8 @@ def get_phonemizer_by_name(name: str, **kwargs) -> BasePhonemizer:
         return ZH_CN_Phonemizer(**kwargs)
     if name == "ja_jp_phonemizer":
         return JA_JP_Phonemizer(**kwargs)
+    if name == "ja_jp_pyopenjtalk_phonemizer":
+        return JA_JP_Pyopenjtalk_Phonemizer(**kwargs)
     if name == "ko_kr_phonemizer":
         return KO_KR_Phonemizer(**kwargs)
     raise ValueError(f"Phonemizer {name} not found")
