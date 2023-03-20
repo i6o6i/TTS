@@ -132,6 +132,9 @@ def japanese_to_ipa(text):
     text = get_real_hatsuon(text)
     for regex, replacement in _romaji_to_ipa:
         text = re.sub(regex, replacement, text)
+
+    text = re.sub(r'\s+$', '', text)
+    text = re.sub(r'([^\.,!\?\-…~])$', r'\1.', text)
     return text
 
 
