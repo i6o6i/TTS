@@ -123,6 +123,13 @@ def get_real_hatsuon(text):
         text = re.sub(regex, replacement, text)
     return text
 
+def japanese_to_phoneme(text):
+    text = japanese_to_romaji_with_accent(text).replace('...', '…')
+    text = re.sub(r'ts','ʦ', text)
+    text = re.sub(r'u','ɯ', text)
+    text = re.sub(r'\s+$', '', text)
+    text = re.sub(r'([^\.,!\?\-…~])$', r'\1.', text)
+    return text
 
 def japanese_to_ipa(text):
     text = japanese_to_romaji_with_accent(text).replace('...', '…')

@@ -1,6 +1,6 @@
 from typing import Dict
 
-from TTS.tts.utils.text.japanese.ja_jp_pyopenjtalk_phonemizer import japanese_to_ipa as japanese_text_to_phonemes
+from TTS.tts.utils.text.japanese.ja_jp_pyopenjtalk_phonemizer import japanese_to_phoneme as japanese_text_to_phonemes
 #from TTS.tts.utils.text.japanese.phonemizer import japanese_text_to_phonemes
 from TTS.tts.utils.text.phonemizers.base import BasePhonemizer
 
